@@ -19,16 +19,17 @@ export class PetModule extends React.Component{
     // include some logic for checking the prop passed to the module
     // to see if this is display cat or dog
     if (this.props.animalType==='cat') {
-      // run catdelete api call
+      this.props.dispatch(adoptCat());
     } else if (this.props.animalType==='dog') {
-      //run dogdelete api call
+      this.props.dispatch(adoptDog());
     }
   }
 
 
   render() {
 
-  
+    console.log(this.props);
+
     return(
       <section className='pet-module'>
         <div className='pet-name'>
@@ -70,8 +71,8 @@ export class PetModule extends React.Component{
 
 
 const mapStateToProps = state => ({
-  cat: state.cat,
-  dog: state.dog
+  cat: state.cat.data,
+  dog: state.dog.data
 })
 
 export default connect(mapStateToProps)(PetModule);
