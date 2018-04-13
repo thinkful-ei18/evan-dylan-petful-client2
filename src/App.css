@@ -27,6 +27,7 @@ header {
   text-align:center;
   line-height:1.5em;
   color:#F7F7F7;
+  border-bottom:1px solid #323643;
 }
 
 
@@ -126,6 +127,8 @@ main {
   margin-bottom:1em;
   font-size:1em;
 }
+
+
 
 @media only screen and (min-width:1000px) {
   .pet-module {

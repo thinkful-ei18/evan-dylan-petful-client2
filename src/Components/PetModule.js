@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 
 export default class PetModule extends React.Component{
@@ -43,5 +44,12 @@ export default class PetModule extends React.Component{
       </section>
     )
   }
-
 }
+
+
+// const mapStateToProps = state => ({
+//   cat: state.reducers.cat[0],
+//   dog: state.reducers.dog[0]
+// })
+
+// export default connect(mapStateToProps(PetModule));
