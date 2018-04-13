@@ -6,25 +6,35 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   if (action.type === 'FETCH_CAT_REQUEST') {
-
-  }
-  else if (action.type === 'FETCH_CAT_SUCCESS') {
-
-  }
-  else if (action.type === 'FETCH_CAT_ERROR') {
-
-  }
-  else if (action.type === 'ADOPT_CAT_REQUEST') {
-
-  }
-  else if (action.type === 'ADOPT_CAT_SUCCESS') {
-
-  }
-  else if (action.type === 'ADOPT_CAT_ERROR') {
-
-  }
-  else {
+    return Object.assign({}, state, {
+      loading: true
+    });
+  } else if (action.type === 'FETCH_CAT_SUCCESS') {
+    return Object.assign({}, state, {
+      loading: false,
+      data: action.cat
+    });
+  } else if (action.type === 'FETCH_CAT_ERROR') {
+    return Object.assign({}, state, {
+      loading: false,
+      err: action.error
+    });
+  } else if (action.type === 'ADOPT_CAT_REQUEST') {
+    return Object.assign({}, state, {
+      data: null,
+      loading: true
+    });
+  } else if (action.type === 'ADOPT_CAT_SUCCESS') {
+    return Object.assign({}, state, {
+      loading: false,
+      data: action.cat
+    });
+  } else if (action.type === 'ADOPT_CAT_ERROR') {
+    return Object.assign({}, state, {
+      loading: false,
+      err: action.error
+    });
+  } else {
     return state;
   }
 }
-
