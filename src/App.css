@@ -1,28 +1,139 @@
-.App {
-  text-align: center;
+/* GLOBAL RESETS */
+
+body {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+/* GENERAL SETTINGS */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color:#F7F7F7;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+
+
+/* HEADER */
+
+header {
+  position:fixed;
+  top:0;
+  width:100%;
+  background-color:#FF570C;
+  height:4em;
+  text-align:center;
+  line-height:1.5em;
+  color:#F7F7F7;
+  border-bottom:1px solid #323643;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+main {
+  margin-top:6em;
 }
 
-.App-intro {
-  font-size: large;
+
+
+/* PET MODULE */
+
+.pet-module {
+  background-color:#EEEEEE;
+  border: 1px solid #606470;
+  border-radius:3px;
+  margin:2em; 
+  display:flex;
+  flex-direction:column;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.pet-name {
+  font-weight:bold;
+  margin:.7em;
+  font-size:1.5em;
+  text-align:center;
+}
+
+.pet-info-pic-cont {
+  display:flex;
+  flex-direction:row;
+  border-radius:5px;
+  min-height:13em;
+}
+
+
+.pet-pic {
+  display:flex;
+  justify-content:center;
+}
+
+.pet-pic img {
+  width:12.5em;
+  margin-left:3em;
+  margin-top:2em;
+  height:11em;
+  border-radius:7em;
+  display:block;
+
+}
+
+.pet-info {
+  max-width:60%;
+  margin:1em auto;
+  margin-left:4em;
+  overflow:hidden;
+  
+}
+
+.more-info {
+  display:flex;
+  flex-direction: row;
+  margin:1.5em auto;
+  margin-top:0;
+}
+
+
+.info-title {
+  font-weight:bold;
+  font-size:1.1em;
+  margin-bottom:4px;
+}
+
+.additional-info-box {
+  width:5em;
+}
+
+@media only screen and (max-width:600px) {
+  .pet-info-pic-cont {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .pet-info {
+    max-width:75%;
+    margin:0 auto;
+    margin-bottom:1em;
+  }
+}
+
+.adopt-button {
+  width:8em;
+  margin:0 auto;
+  background-color:#323643;
+  border:none;
+  color:white;
+  padding:7px;
+  margin-bottom:1em;
+  font-size:1em;
+}
+
+
+
+@media only screen and (min-width:1000px) {
+  .pet-module {
+    width:80%;
+    margin:2em auto;
+  }
+
 }
