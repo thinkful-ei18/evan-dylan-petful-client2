@@ -42,7 +42,9 @@ main {
   background-color:#EEEEEE;
   border: 1px solid #606470;
   border-radius:3px;
-  margin:2em;
+  margin:2em; 
+  display:flex;
+  flex-direction:column;
 }
 
 .pet-name {
@@ -56,20 +58,79 @@ main {
   display:flex;
   flex-direction:row;
   border-radius:5px;
-  height:78%;
+  min-height:13em;
 }
 
 
+.pet-pic {
+  display:flex;
+  justify-content:center;
+}
+
 .pet-pic img {
   width:12.5em;
-  margin-left:1em;
-  margin-right:1em;
+  margin-left:3em;
+  margin-top:2em;
   height:11em;
   border-radius:7em;
+  display:block;
+
 }
 
 .pet-info {
   max-width:60%;
-  margin:1em;
+  margin:1em auto;
+  margin-left:4em;
   overflow:hidden;
+  
+}
+
+.more-info {
+  display:flex;
+  flex-direction: row;
+  margin:1.5em auto;
+  margin-top:0;
+}
+
+
+.info-title {
+  font-weight:bold;
+  font-size:1.1em;
+  margin-bottom:4px;
+}
+
+.additional-info-box {
+  width:5em;
+}
+
+@media only screen and (max-width:600px) {
+  .pet-info-pic-cont {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .pet-info {
+    max-width:75%;
+    margin:0 auto;
+    margin-bottom:1em;
+  }
+}
+
+.adopt-button {
+  width:8em;
+  margin:0 auto;
+  background-color:#323643;
+  border:none;
+  color:white;
+  padding:7px;
+  margin-bottom:1em;
+  font-size:1em;
+}
+
+@media only screen and (min-width:1000px) {
+  .pet-module {
+    width:80%;
+    margin:2em auto;
+  }
+
 }

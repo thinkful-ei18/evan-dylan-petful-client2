@@ -16,15 +16,29 @@ export default class PetModule extends React.Component{
           </section>
           <section className='pet-info'>
             <section className='pet-info-about'>
-            <h4 className='pet-info-about-intro'>About Bernie</h4>
+            <h4 className='pet-info-about-intro'>About Bernie:</h4>
             <p className='pet-info-about-text'>
-          I am a sweet handsome young man who loves to play and get attention from my foster mom. I'm so ready for my forever home. 'I am a sweet handsome young man who loves to play and get attention from my foster mom. I\'m so ready for my forever home.'I am a sweet handsome young man who loves to play and get attention from my foster mom. I\'m so ready for my forever home.'I am a sweet handsome young man who loves to play and get attention from my foster mom. I\'m so ready for my forever home.
+              HI!
             </p>
             </section>
           </section>
           
         </section>
-        
+          <section className='more-info'>
+            <section className='sex additional-info-box'>
+              <div className='info-title'>Sex:</div>
+              Male
+            </section>
+            <section className='age additional-info-box'>
+            <div className='info-title'>Age:</div>
+              3
+            </section>
+            <section className='breed additional-info-box'>
+            <div className='info-title'>Breed:</div>
+            Tabby
+            </section>
+          </section>
+          <button className='adopt-button'>Adopt</button>
 
       </section>
     )
