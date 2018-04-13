@@ -1,5 +1,15 @@
 const initialState = {
-  data: null,
+  data: {
+    imageURL:
+      'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
+    imageDescription:
+      'Orange bengal cat with black stripes lounging on concrete.',
+    name: 'Fluffy',
+    sex: 'Female',
+    age: 2,
+    breed: 'Bengal',
+    story: 'Thrown on the street'
+  },
   error: null,
   loading: null
 };
@@ -21,7 +31,7 @@ export default function reducer(state = initialState, action) {
 
   }
   else if (action.type === 'ADOPT_CAT_ERROR') {
-    
+
   }
   else {
     return state;
