@@ -11,7 +11,6 @@ const fetchCatRequest = () => ({
 });
 
 const fetchCatSuccess = cat => {
- console.log('fetchCatSuccess was run');
   return {
   type: FETCH_CAT_SUCCESS,
   cat
@@ -37,7 +36,6 @@ const adoptCatError = err => ({
 });
 
 export const fetchCat = () => dispatch => {
-  console.log('fetch cat was called');
   dispatch(fetchCatRequest());
   return (
     fetch(`${API_BASE_URL}/cat`, {
