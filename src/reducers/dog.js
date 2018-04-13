@@ -15,6 +15,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
+  return state;
   if (action.type === 'FETCH_DOG_REQUEST') {
   } else if (action.type === 'FETCH_DOG_SUCCESS') {
   } else if (action.type === 'FETCH_DOG_ERROR') {

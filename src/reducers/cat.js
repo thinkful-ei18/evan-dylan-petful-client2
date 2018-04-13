@@ -15,6 +15,7 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
+  return state;
   if (action.type === 'FETCH_CAT_REQUEST') {
 
   }
