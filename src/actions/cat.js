@@ -10,10 +10,13 @@ const fetchCatRequest = () => ({
   type: FETCH_CAT_REQUEST
 });
 
-const fetchCatSuccess = cat => ({
+const fetchCatSuccess = cat => {
+ console.log('fetchCatSuccess was run');
+  return {
   type: FETCH_CAT_SUCCESS,
   cat
-})
+  }
+}
 
 const fetchCatError = err => ({
   type: FETCH_CAT_ERROR,
@@ -34,21 +37,22 @@ const adoptCatError = err => ({
 });
 
 export const fetchCat = () => dispatch => {
+  console.log('fetch cat was called');
   dispatch(fetchCatRequest());
   return (
     fetch(`${API_BASE_URL}/cat`, {
     method: 'GET'
     })
     .then(res => res.json())
-    .then(({data}) => fetchCatSuccess(data))
-    .catch(err => fetchCatError(err))
+    .then(data => dispatch(fetchCatSuccess(data)))
+    .catch(err => dispatch(fetchCatError(err)))
   );
 }
 
 export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
   return fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
-    .then(() => adoptCatSuccess())
+    .then(() => dispatch(adoptCatSuccess()))
     .then(fetchCat())
-    .catch(err => adoptCatError(err));
+    .catch(err => dispatch(adoptCatError(err)));
 }
