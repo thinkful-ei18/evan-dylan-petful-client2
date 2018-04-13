@@ -10,10 +10,13 @@ const fetchCatRequest = () => ({
   type: FETCH_CAT_REQUEST
 });
 
-const fetchCatSuccess = cat => ({
+const fetchCatSuccess = cat => {
+ console.log('fetchCatSuccess was run');
+  return {
   type: FETCH_CAT_SUCCESS,
   cat
-})
+  }
+}
 
 const fetchCatError = err => ({
   type: FETCH_CAT_ERROR,
@@ -41,8 +44,8 @@ export const fetchCat = () => dispatch => {
     method: 'GET'
     })
     .then(res => res.json())
-    .then(({data}) => fetchCatSuccess(data))
-    .catch(err => fetchCatError(err))
+    .then(data => dispatch(fetchCatSuccess(data)))
+    .catch(err => dispatch(fetchCatError(err)))
   );
 }
 

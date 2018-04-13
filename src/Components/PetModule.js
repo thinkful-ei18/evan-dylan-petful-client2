@@ -11,7 +11,7 @@ export class PetModule extends React.Component{
     if (this.props.animalType==='cat') {
       this.props.dispatch(fetchCat());
     } else if (this.props.animalType==='dog') {
-      fetchDog();
+      this.props.dispatch(fetchDog());
     }
   }
 
