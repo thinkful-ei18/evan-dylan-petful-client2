@@ -10,7 +10,6 @@ export default function reducer(state = initialState, action) {
       loading: true
     });
   } else if (action.type === 'FETCH_CAT_SUCCESS') {
-    console.log('fetch cat success hit the reducer');
     return Object.assign({}, state, {
       loading: false,
       data: action.cat

@@ -52,7 +52,7 @@ export const fetchCat = () => dispatch => {
 export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
   return fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
-    .then(() => adoptCatSuccess())
+    .then(() => dispatch(adoptCatSuccess()))
     .then(fetchCat())
-    .catch(err => adoptCatError(err));
+    .catch(err => dispatch(adoptCatError(err)));
 }
