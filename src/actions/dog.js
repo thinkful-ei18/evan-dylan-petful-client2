@@ -39,7 +39,9 @@ export const fetchDog = () => dispatch => {
     method: 'GET'
   })
     .then(res => res.json())
-    .then((data) => dispatch(fetchDogSuccess(data)))
+    .then(data => { 
+      dispatch(fetchDogSuccess(data))
+    })
     .catch(err => dispatch(fetchDogError(err)));
 };
 
@@ -47,6 +49,6 @@ export const adoptDog = () => dispatch => {
   dispatch(adoptDogRequest());
   return fetch(`${API_BASE_URL}/dog`, { method: 'DELETE' })
     .then(() => dispatch(adoptDogSuccess()))
-    .then(fetchDog())
+    .then(dispatch(fetchDog()))
     .catch(err => dispatch(adoptDogError(err)));
 };

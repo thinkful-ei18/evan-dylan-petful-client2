@@ -1,12 +1,16 @@
 import React from 'react';
+import {adoptCat, adoptDog} from '../actions/index';
+import {connect} from 'react-redux';
 
-
-
-export default class PetModule extends React.Component{
+export class PetModule extends React.Component{
 
 
   onAdopt() {
-//
+    if (this.props.animalType==='cat') {
+      this.props.dispatch(adoptCat());
+    } else if (this.props.animalType==='dog') {
+      this.props.dispatch(adoptDog());
+    }
   }
 
 
@@ -51,3 +55,6 @@ export default class PetModule extends React.Component{
     )
   }
 }
+
+
+export default connect()(PetModule);
