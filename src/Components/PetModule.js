@@ -11,7 +11,7 @@ export class PetModule extends React.Component{
     if (this.props.animalType==='cat') {
       this.props.dispatch(fetchCat());
     } else if (this.props.animalType==='dog') {
-      this.props.dispatch(fetchDog());
+      fetchDog();
     }
   }
 
@@ -71,8 +71,8 @@ export class PetModule extends React.Component{
 
 
 const mapStateToProps = state => ({
-  cat: state.cat.data,
-  dog: state.dog.data
+  cat: state.cat,
+  dog: state.dog
 })
 
 export default connect(mapStateToProps)(PetModule);

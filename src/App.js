@@ -4,6 +4,10 @@ import PetModule from './Components/PetModule.js';
 import {Provider} from 'react-redux';
 import store from './store';
 
+import {fetchCat} from './actions/index';
+
+store.dispatch(fetchCat());
+
 
 class App extends Component {
   render() {
@@ -24,3 +28,7 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+

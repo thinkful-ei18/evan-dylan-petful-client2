@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./store";
+
 store.getState();
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

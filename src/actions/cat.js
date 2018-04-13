@@ -34,6 +34,7 @@ const adoptCatError = err => ({
 });
 
 export const fetchCat = () => dispatch => {
+  console.log('fetch cat was called');
   dispatch(fetchCatRequest());
   return (
     fetch(`${API_BASE_URL}/cat`, {
