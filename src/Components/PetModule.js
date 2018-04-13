@@ -1,18 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {adoptCat, adoptDog, fetchCat, fetchDog} from '../actions/index.js';
 
 
 
 export class PetModule extends React.Component{
-
-
   componentDidMount() {
     // include some logic for checking the prop passed to the module
     // to see if this is for displaying cat or dog
     if (this.props.animalType==='cat') {
-      // run catdisplay api call
+      this.props.dispatch(fetchCat());
     } else if (this.props.animalType==='dog') {
-      //run dogdisplay api call
+      this.props.dispatch(fetchDog());
     }
   }
 
@@ -75,4 +74,4 @@ const mapStateToProps = state => ({
   dog: state.dog
 })
 
-export default connect(mapStateToProps(PetModule));
+export default connect(mapStateToProps)(PetModule);
