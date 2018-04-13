@@ -12,14 +12,16 @@ componentDidMount() {
   this.props.dispatch(fetchDog());
 }
 
+
   render() {
 
     let petModules = this.props.dog.data && this.props.cat.data ? (
       <div>
-      <PetModule animal={this.props.cat.data}/>
-      <PetModule animal={this.props.dog.data}/>
+      <PetModule animalType='cat' animal={this.props.cat.data}/>
+      <PetModule animalType='dog' animal={this.props.dog.data}/>
       </div>
-    ) : '';
+    ) : 'We\'re out of pets!';
+
 
     return (
 

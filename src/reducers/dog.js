@@ -14,7 +14,7 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === 'ADOPT_DOG_REQUEST') {
     return Object.assign({}, state, { data: null, loading: true });
   } else if (action.type === 'ADOPT_DOG_SUCCESS') {
-    return Object.assign({}, state, { loading: false, data: action.dog });
+    return Object.assign({}, state, { loading: false});
   } else if (action.type === 'ADOPT_DOG_ERROR') {
     return Object.assign({}, state, { loading: false, err: action.error });
   } else {

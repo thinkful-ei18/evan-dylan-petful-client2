@@ -10,12 +10,10 @@ const fetchCatRequest = () => ({
   type: FETCH_CAT_REQUEST
 });
 
-const fetchCatSuccess = cat => {
-  return {
+const fetchCatSuccess = cat => ({
   type: FETCH_CAT_SUCCESS,
   cat
-  }
-}
+})
 
 const fetchCatError = err => ({
   type: FETCH_CAT_ERROR,
@@ -42,8 +40,12 @@ export const fetchCat = () => dispatch => {
     method: 'GET'
     })
     .then(res => res.json())
-    .then(data => dispatch(fetchCatSuccess(data)))
-    .catch(err => dispatch(fetchCatError(err)))
+    .then(data =>  {
+      dispatch(fetchCatSuccess(data))
+    })
+    .catch(err => { 
+     dispatch(fetchCatError(err));
+    })
   );
 }
 
@@ -51,6 +53,8 @@ export const adoptCat = () => dispatch => {
   dispatch(adoptCatRequest());
   return fetch(`${API_BASE_URL}/cat`, { method: 'DELETE' })
     .then(() => dispatch(adoptCatSuccess()))
-    .then(fetchCat())
+    .then(() => {
+      dispatch(fetchCat());
+    })
     .catch(err => dispatch(adoptCatError(err)));
 }

@@ -27,7 +27,6 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === 'ADOPT_CAT_SUCCESS') {
     return Object.assign({}, state, {
       loading: false,
-      data: action.cat
     });
   } else if (action.type === 'ADOPT_CAT_ERROR') {
     return Object.assign({}, state, {
