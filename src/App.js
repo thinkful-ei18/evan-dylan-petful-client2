@@ -20,7 +20,7 @@ componentDidMount() {
       <PetModule animalType='cat' animal={this.props.cat.data}/>
       <PetModule animalType='dog' animal={this.props.dog.data}/>
       </div>
-    ) : 'We\'re out of pets!';
+    ) : '';
 
 
     return (
