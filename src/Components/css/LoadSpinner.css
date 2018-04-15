@@ -4,9 +4,8 @@
   height: 60px;
   text-align: center;
   font-size: 10px;
-  position:fixed;
-  left:calc(48.4%);
-  top:calc(20%);
+  margin-left:8em;
+  margin-top:0;
 }
 
 .spinner > div {
@@ -53,3 +52,20 @@
     -webkit-transform: scaleY(1.0);
   }
 }
+
+@media screen and (max-width:800px) {
+
+  .spinner {
+  left:calc(45.3%) !important;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+
+  .spinner {
+  left:calc(41.3%) !important;
+  }
+
+}
+

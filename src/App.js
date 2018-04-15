@@ -3,7 +3,6 @@ import './App.css';
 import PetModule from './Components/PetModule.js';
 import {connect} from 'react-redux';
 import {fetchDog, fetchCat} from './actions/index';
-import LoadSpinner from './Components/LoadSpinner';
 
 class App extends Component {
 componentDidMount() {
@@ -14,23 +13,17 @@ componentDidMount() {
 
   render() {
 
-    let petModules = this.props.dog.data && this.props.cat.data ? (
-      <div>
-      <PetModule animalType='cat' animal={this.props.cat.data}/>
-      <PetModule animalType='dog' animal={this.props.dog.data}/>
-      </div>
-    ) : <LoadSpinner/>;
-
-
     return (
-
       <div className="App">
         <header className='site-header'>
           <h1>Petful</h1>
         </header>
+        <div>
         <main className='main-container'>
-          {petModules}
+        <PetModule animalType='cat' animal={this.props.cat.data}/>
+        <PetModule animalType='dog' animal={this.props.dog.data}/>
         </main>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import {adoptCat, adoptDog} from '../actions/index';
 import {connect} from 'react-redux';
+import LoadSpinner from './LoadSpinner';
+
 
 export class PetModule extends React.Component{
 
@@ -20,17 +22,17 @@ export class PetModule extends React.Component{
       
       <section className='pet-module'>
         <div className='pet-name'>
-        {this.props.animal.name}
+        {this.props.animal ? this.props.animal.name : ''}
         </div>
         <section className='pet-info-pic-cont'>
           <section className='pet-pic'>
-            <img src={this.props.animal.imageURL} alt={this.props.animal.imageDescription} />
+            <img src={this.props.animal ? this.props.animal.imageURL : 'https://4vector.com/i/free-vector-gatto-cat-clip-art_119295_Gatto_Cat_clip_art_hight.png'} alt={this.props.animal ? this.props.animal.imageDescription : ''} />
           </section>
           <section className='pet-info'>
             <section className='pet-info-about'>
-            <h4 className='pet-info-about-intro'>About {this.props.animal.name}:</h4>
+            <h4 className='pet-info-about-intro'>About {this.props.animal ? this.props.animal.name : '' }:</h4>
             <p className='pet-info-about-text'>
-             {this.props.animal.story}
+             {this.props.animal ? this.props.animal.story : <LoadSpinner/>}
             </p>
             </section>
           </section>
@@ -39,15 +41,15 @@ export class PetModule extends React.Component{
           <section className='more-info'>
             <section className='sex additional-info-box'>
               <div className='info-title'>Sex:</div>
-              {this.props.animal.sex}
+              {this.props.animal ? this.props.animal.sex : ''}
             </section>
             <section className='age additional-info-box'>
             <div className='info-title'>Age:</div>
-            {this.props.animal.age}
+            {this.props.animal ? this.props.animal.age : ''}
             </section>
             <section className='breed additional-info-box'>
             <div className='info-title'>Breed:</div>
-            {this.props.animal.breed}
+            {this.props.animal ? this.props.animal.breed : ''}
             </section>
           </section>
           <button onClick={() => this.onAdopt()} className='adopt-button'>Adopt</button>

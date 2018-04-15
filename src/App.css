@@ -46,6 +46,7 @@ main {
   margin:2em; 
   display:flex;
   flex-direction:column;
+  height:27em;
 }
 
 .pet-name {
@@ -53,6 +54,7 @@ main {
   margin:.7em;
   font-size:1.5em;
   text-align:center;
+  min-height:2.5em;
 }
 
 .pet-info-pic-cont {
@@ -66,6 +68,7 @@ main {
 .pet-pic {
   display:flex;
   justify-content:center;
+  min-height:12em;
 }
 
 .pet-pic img {
@@ -83,6 +86,7 @@ main {
   margin:1em auto;
   margin-left:4em;
   overflow:hidden;
+  min-height:12em;
   
 }
 
@@ -102,6 +106,7 @@ main {
 
 .additional-info-box {
   width:5em;
+  min-height:2em;
 }
 
 @media only screen and (max-width:600px) {
