@@ -142,6 +142,19 @@ main {
   height:2em;
 }
 
+.adopt-button:active {
+  animation:rotate .8s infinite;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(20deg);}
+  25% {transform: rotate(160deg);}
+  50% {transform: rotate(240deg);}
+  75% {transform: rotate(320deg);}
+  100% {transform: rotate(360deg);}
+
+}
+
 
 
 @media only screen and (min-width:1000px) {
