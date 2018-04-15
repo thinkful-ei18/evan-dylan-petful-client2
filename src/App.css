@@ -120,6 +120,14 @@ main {
     margin:0 auto;
     margin-bottom:1em;
   }
+
+  .pet-module {
+    height:40em;
+  }
+
+  .pet-pic img {
+    margin:0;
+  }
 }
 
 .adopt-button {
@@ -131,6 +139,7 @@ main {
   padding:7px;
   margin-bottom:1em;
   font-size:1em;
+  height:2em;
 }
 
 
